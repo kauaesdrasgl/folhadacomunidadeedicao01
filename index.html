@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha na Comunidade - Inscrições</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ... (mantenha todo o CSS igual) ... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ... (mantenha todo o HTML igual) ... -->
+        
+        <!-- Form Container -->
+        <div class="form-container">
+            <!-- FORMULÁRIOS SEPARADOS PARA CADA MODALIDADE -->
+            
+            <!-- Free Fire -->
+            <form id="freefire-form" class="modalidade-content active" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
+                <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+                <input type="hidden" name="Modalidade" value="Free Fire" />
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-flag"></i> Free Fire</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="modalidade-ff" class="required">Modalidade de Jogo</label>
+                            <select id="modalidade-ff" name="Modalidade de Jogo" required>
+                                <option value="" disabled selected>Selecione uma modalidade</option>
+                                <option value="Free Fire Emulador 4v4">Free Fire Emulador 4v4</option>
+                                <option value="Free Fire Mobile 4v4">Free Fire Mobile 4v4</option>
+                                <option value="Free Fire Mobile Mapa Aberto">Free Fire Mobile Mapa Aberto</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nome-time" class="required">Nome do Time</label>
+                            <input type="text" id="nome-time" name="Nome do Time" required placeholder="Ex: Os Vingadores FF">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nome-responsavel" class="required">Nome do Responsável</label>
+                            <input type="text" id="nome-responsavel" name="Nome do Responsável" required placeholder="Seu nome completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nick-responsavel" class="required">Nickname do Responsável</label>
+                            <input type="text" id="nick-responsavel" name="Nickname do Responsável" required placeholder="Seu nickname no jogo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone-responsavel" class="required">Telefone do Responsável</label>
+                            <input type="tel" id="telefone-responsavel" name="Telefone do Responsável" required placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="instagram-time">Instagram do Time</label>
+                            <input type="text" id="instagram-time" name="Instagram do Time" placeholder="@seudotime">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogadores do Free Fire -->
+                <div class="form-section">
+                    <h2><i class="fas fa-user-friends"></i> Jogadores do Time</h2>
+                    <div class="player-controls">
+                        <div class="player-count">
+                            <i class="fas fa-users"></i> Jogadores: <span id="player-count">4</span>/6 
+                            <small>(4 titulares obrigatórios, 2 reservas opcionais)</small>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="add-player-ff">
+                            <i class="fas fa-plus"></i> Adicionar Reserva
+                        </button>
+                    </div>
+                    
+                    <div id="jogadores-container">
+                        <!-- Jogadores serão gerados via JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO FREE FIRE
+                    </button>
+                </div>
+            </form>
+            
+            <!-- FIFA -->
+            <form id="fifa-form" class="modalidade-content" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
+                <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+                <input type="hidden" name="Modalidade" value="FIFA" />
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-user"></i> Informações do Jogador - FIFA</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome-fifa" class="required">Nome Completo</label>
+                            <input type="text" id="nome-fifa" name="Nome Completo" required placeholder="Seu nome completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apelido-fifa">Apelido (se houver)</label>
+                            <input type="text" id="apelido-fifa" name="Apelido" placeholder="Seu apelido">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone-fifa" class="required">Telefone</label>
+                            <input type="tel" id="telefone-fifa" name="Telefone" required placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="instagram-fifa">Instagram</label>
+                            <input type="text" id="instagram-fifa" name="Instagram" placeholder="@seuinstagram">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nascimento-fifa" class="required">Data de Nascimento</label>
+                            <input type="date" id="nascimento-fifa" name="Data de Nascimento" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO FIFA
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Batalhas de Rap -->
+            <form id="rap-form" class="modalidade-content" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
+                <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+                <input type="hidden" name="Modalidade" value="Batalha da SIX" />
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-microphone-alt"></i> Informações do Participante - Batalhas de Rap</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome-rap" class="required">Nome Completo</label>
+                            <input type="text" id="nome-rap" name="Nome Completo" required placeholder="Seu nome completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apelido-rap">Apelido Artístico</label>
+                            <input type="text" id="apelido-rap" name="Apelido Artístico" placeholder="Seu nome artístico">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone-rap" class="required">Telefone</label>
+                            <input type="tel" id="telefone-rap" name="Telefone" required placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="instagram-rap">Instagram</label>
+                            <input type="text" id="instagram-rap" name="Instagram" placeholder="@seuinstagram">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nascimento-rap" class="required">Data de Nascimento</label>
+                            <input type="date" id="nascimento-rap" name="Data de Nascimento" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO BATALHA DA SIX
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <footer class="footer">
+            <p>Folha na Comunidade &copy; 2025 - Todos os direitos reservados</p>
+            <p>Evento organizado por Folha do Acre e Six Eight</p>
+        </footer>
+    </div>
+
+    <script>
+        // Inicialização do formulário
+        document.addEventListener('DOMContentLoaded', function() {
+            // Alternar entre modalidades
+            document.querySelectorAll('.modalidade-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remover classe ativa de todas as abas
+                    document.querySelectorAll('.modalidade-tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    
+                    // Adicionar classe ativa à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Esconder todos os formulários
+                    document.querySelectorAll('form.modalidade-content').forEach(form => {
+                        form.classList.remove('active');
+                    });
+                    
+                    // Mostrar o formulário correspondente
+                    const modalidade = tab.getAttribute('data-modalidade');
+                    document.getElementById(`${modalidade}-form`).classList.add('active');
+                });
+            });
+            
+            // Inicializar jogadores do Free Fire
+            initFreeFirePlayers();
+            
+            // Configurar máscara de telefone
+            setupPhoneMask();
+        });
+        
+        // Sistema de jogadores para Free Fire
+        let playerCount = 4;
+        const maxPlayers = 6;
+        
+        function initFreeFirePlayers() {
+            const jogadoresContainer = document.getElementById('jogadores-container');
+            jogadoresContainer.innerHTML = '';
+            
+            // Criar 4 jogadores titulares (obrigatórios)
+            for (let i = 1; i <= 4; i++) {
+                const playerSection = createPlayerSection(i, 'titular', true);
+                jogadoresContainer.appendChild(playerSection);
+            }
+            
+            updatePlayerCount();
+        }
+        
+        function createPlayerSection(number, type, isRequired) {
+            const section = document.createElement('div');
+            section.className = `player-section ${type}`;
+            section.setAttribute('data-player', number);
+            section.setAttribute('data-type', type);
+            
+            const requiredAttr = isRequired ? 'required' : '';
+            const requiredClass = isRequired ? 'required' : '';
+            
+            section.innerHTML = `
+                <h3>
+                    <i class="fas fa-user"></i> Jogador ${number} 
+                    <span class="player-tag">${type === 'titular' ? 'Titular' : 'Reserva'}</span>
+                </h3>
+                ${type === 'reserva' ? '<button type="button" class="btn btn-danger remove-player-btn"><i class="fas fa-times"></i> Remover</button>' : ''}
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome-jogador-${number}" class="${requiredClass}">Nome Completo</label>
+                        <input type="text" id="nome-jogador-${number}" name="Nome Jogador ${number}" ${requiredAttr} 
+                               placeholder="Nome completo do jogador">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nick-jogador-${number}" class="${requiredClass}">Nickname no Jogo</label>
+                        <input type="text" id="nick-jogador-${number}" name="Nickname Jogador ${number}" ${requiredAttr} 
+                               placeholder="Nickname no Free Fire">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id-jogador-${number}" class="${requiredClass}">ID do Jogador</label>
+                        <input type="text" id="id-jogador-${number}" name="ID Jogador ${number}" ${requiredAttr} 
+                               placeholder="ID numérico do jogador">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone-jogador-${number}" class="${requiredClass}">Telefone do Jogador</label>
+                        <input type="tel" id="telefone-jogador-${number}" name="Telefone Jogador ${number}" ${requiredAttr} 
+                               placeholder="(00) 00000-0000" class="phone-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instagram-jogador-${number}">Instagram do Jogador</label>
+                        <input type="text" id="instagram-jogador-${number}" name="Instagram Jogador ${number}" 
+                               placeholder="@instagramdojogador">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nascimento-jogador-${number}" class="${requiredClass}">Data de Nascimento</label>
+                        <input type="date" id="nascimento-jogador-${number}" name="Nascimento Jogador ${number}" ${requiredAttr}>
+                    </div>
+                </div>
+            `;
+            
+            // Aplicar máscara de telefone
+            const phoneInput = section.querySelector('.phone-input');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    applyPhoneMask(e.target);
+                });
+            }
+            
+            // Adicionar evento de remoção para jogadores reserva
+            if (type === 'reserva') {
+                const removeBtn = section.querySelector('.remove-player-btn');
+                removeBtn.addEventListener('click', () => {
+                    if (playerCount > 4) {
+                        section.remove();
+                        playerCount--;
+                        renumberPlayers();
+                        updatePlayerCount();
+                    }
+                });
+            }
+            
+            return section;
+        }
+        
+        function renumberPlayers() {
+            const players = document.querySelectorAll('.player-section');
+            players.forEach((player, index) => {
+                const newNumber = index + 1;
+                player.setAttribute('data-player', newNumber);
+                
+                // Atualizar título
+                const title = player.querySelector('h3');
+                title.innerHTML = `<i class="fas fa-user"></i> Jogador ${newNumber} 
+                    <span class="player-tag">${player.getAttribute('data-type') === 'titular' ? 'Titular' : 'Reserva'}</span>`;
+                
+                // Atualizar IDs e names dos inputs
+                const inputs = player.querySelectorAll('input, label');
+                inputs.forEach(input => {
+                    if (input.id) input.id = input.id.replace(/\d+$/, newNumber);
+                    if (input.htmlFor) input.htmlFor = input.htmlFor.replace(/\d+$/, newNumber);
+                    if (input.name) input.name = input.name.replace(/\d+$/, newNumber);
+                });
+            });
+        }
+        
+        function updatePlayerCount() {
+            document.getElementById('player-count').textContent = playerCount;
+            
+            // Habilitar/desabilitar botão de adicionar
+            const addButton = document.getElementById('add-player-ff');
+            if (playerCount >= maxPlayers) {
+                addButton.disabled = true;
+                addButton.innerHTML = '<i class="fas fa-ban"></i> Limite atingido';
+                addButton.classList.add('btn-secondary');
+                addButton.classList.remove('btn-primary');
+            } else {
+                addButton.disabled = false;
+                addButton.innerHTML = '<i class="fas fa-plus"></i> Adicionar Reserva';
+                addButton.classList.add('btn-primary');
+                addButton.classList.remove('btn-secondary');
+            }
+        }
+        
+        // Adicionar jogador reserva
+        document.getElementById('add-player-ff').addEventListener('click', () => {
+            if (playerCount < maxPlayers) {
+                playerCount++;
+                const container = document.getElementById('jogadores-container');
+                const newPlayer = createPlayerSection(playerCount, 'reserva', false);
+                container.appendChild(newPlayer);
+                updatePlayerCount();
+            }
+        });
+        
+        // Máscara de telefone
+        function setupPhoneMask() {
+            const phoneInputs = document.querySelectorAll('input[type="tel"]');
+            phoneInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    applyPhoneMask(e.target);
+                });
+            });
+        }
+        
+        function applyPhoneMask(input) {
+            let value = input.value.replace(/\D/g, '');
+            
+            if (value.length > 11) {
+                value = value.substring(0, 11);
+            }
+            
+            if (value.length > 6) {
+                value = value.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+            } else if (value.length > 0) {
+                value = value.replace(/^(\d{0,2})/, '($1');
+            }
+            
+            input.value = value;
+        }
+        
+        // Validação antes do envio (opcional, para melhor UX)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = 'var(--error)';
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                if (!isValid) {
+                    e.preventDefault();
+                    alert('Por favor, preencha todos os campos obrigatórios marcados com *.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
