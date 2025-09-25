@@ -5,168 +5,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Folha na Comunidade - Inscrições</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ... (mantenha todo o CSS igual) ... */
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- ... (mantenha todo o HTML igual) ... -->
+        <!-- Header com Logos -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="Logo Folha do Acre.png" alt="Folha do Acre" class="logo logo-folha-acre">
+                <img src="Logo Six Eight completa.png" alt="Six Eight Completa" class="logo logo-six-eight-completa">
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="Logo Folha na Comunidade.png" alt="Folha na Comunidade" class="logo logo-folha-comunidade">
+            <h1>INSCRIÇÕES ABERTAS</h1>
+            <p>A Six Eight, em parceria com a Folha, apresenta o evento Folha na Comunidade.<br>
+            A programação contará com campeonatos de Free Fire (Mobile e Emulador), torneio de FIFA, batalhas de rap e games retrô.</p>
+            
+            <div class="event-info">
+                <div class="info-item"><i class="fas fa-trophy"></i> <strong>Premiação Total:</strong> R$ 10.000,00</div>
+                <div class="info-item"><i class="fas fa-calendar-alt"></i> <strong>Data:</strong> 27 e 28 de setembro de 2025</div>
+                <div class="info-item"><i class="fas fa-clock"></i> <strong>Horário:</strong> a partir das 15h</div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> <strong>Local:</strong> Praça da Semsur</div>
+                <div class="info-item"><i class="fas fa-tag"></i> <strong>Evento gratuito</strong></div>
+            </div>
+            
+            <p>As inscrições já estão abertas. Participe e faça parte deste grande momento.</p>
+        </section>
         
         <!-- Form Container -->
         <div class="form-container">
-            <!-- FORMULÁRIOS SEPARADOS PARA CADA MODALIDADE -->
-            
-            <!-- Free Fire -->
-            <form id="freefire-form" class="modalidade-content active" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
+            <form id="inscricaoForm" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
                 <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
-                <input type="hidden" name="Modalidade" value="Free Fire" />
+                <input type="hidden" name="Modalidade" id="modalidade-hidden" value="Free Fire" />
                 
+                <!-- Seletor de Modalidade -->
                 <div class="form-section">
-                    <h2><i class="fas fa-flag"></i> Free Fire</h2>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="modalidade-ff" class="required">Modalidade de Jogo</label>
-                            <select id="modalidade-ff" name="Modalidade de Jogo" required>
-                                <option value="" disabled selected>Selecione uma modalidade</option>
-                                <option value="Free Fire Emulador 4v4">Free Fire Emulador 4v4</option>
-                                <option value="Free Fire Mobile 4v4">Free Fire Mobile 4v4</option>
-                                <option value="Free Fire Mobile Mapa Aberto">Free Fire Mobile Mapa Aberto</option>
-                            </select>
+                    <h2><i class="fas fa-flag"></i> Selecione sua Modalidade</h2>
+                    <div class="modalidade-selector">
+                        <div class="modalidade-tab active" data-modalidade="freefire">
+                            <div class="modalidade-icon"><i class="fas fa-crosshairs"></i></div>
+                            <h3>Free Fire</h3>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="nome-time" class="required">Nome do Time</label>
-                            <input type="text" id="nome-time" name="Nome do Time" required placeholder="Ex: Os Vingadores FF">
+                        <div class="modalidade-tab" data-modalidade="fifa">
+                            <div class="modalidade-icon"><i class="fas fa-futbol"></i></div>
+                            <h3>FIFA</h3>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="nome-responsavel" class="required">Nome do Responsável</label>
-                            <input type="text" id="nome-responsavel" name="Nome do Responsável" required placeholder="Seu nome completo">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nick-responsavel" class="required">Nickname do Responsável</label>
-                            <input type="text" id="nick-responsavel" name="Nickname do Responsável" required placeholder="Seu nickname no jogo">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefone-responsavel" class="required">Telefone do Responsável</label>
-                            <input type="tel" id="telefone-responsavel" name="Telefone do Responsável" required placeholder="(00) 00000-0000">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="instagram-time">Instagram do Time</label>
-                            <input type="text" id="instagram-time" name="Instagram do Time" placeholder="@seudotime">
+                        <div class="modalidade-tab" data-modalidade="rap">
+                            <div class="modalidade-icon"><i class="fas fa-microphone"></i></div>
+                            <h3>Batalha da SIX</h3>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogadores do Free Fire -->
-                <div class="form-section">
-                    <h2><i class="fas fa-user-friends"></i> Jogadores do Time</h2>
-                    <div class="player-controls">
-                        <div class="player-count">
-                            <i class="fas fa-users"></i> Jogadores: <span id="player-count">4</span>/6 
-                            <small>(4 titulares obrigatórios, 2 reservas opcionais)</small>
+                <!-- Free Fire -->
+                <div class="modalidade-content active" id="freefire-content">
+                    <div class="form-section">
+                        <h2><i class="fas fa-users"></i> Informações do Time - Free Fire</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="modalidade-ff" class="required">Modalidade de Jogo</label>
+                                <select id="modalidade-ff" name="Modalidade de Jogo" required>
+                                    <option value="" disabled selected>Selecione uma modalidade</option>
+                                    <option value="Free Fire Emulador 4v4">Free Fire Emulador 4v4</option>
+                                    <option value="Free Fire Mobile 4v4">Free Fire Mobile 4v4</option>
+                                    <option value="Free Fire Mobile Mapa Aberto">Free Fire Mobile Mapa Aberto</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nome-time" class="required">Nome do Time</label>
+                                <input type="text" id="nome-time" name="Nome do Time" required placeholder="Ex: Os Vingadores FF">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nome-responsavel" class="required">Nome do Responsável</label>
+                                <input type="text" id="nome-responsavel" name="Nome do Responsável" required placeholder="Seu nome completo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nick-responsavel" class="required">Nickname do Responsável</label>
+                                <input type="text" id="nick-responsavel" name="Nickname do Responsável" required placeholder="Seu nickname no jogo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone-responsavel" class="required">Telefone do Responsável</label>
+                                <input type="tel" id="telefone-responsavel" name="Telefone do Responsável" required placeholder="(00) 00000-0000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="instagram-time">Instagram do Time</label>
+                                <input type="text" id="instagram-time" name="Instagram do Time" placeholder="@seudotime">
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-primary" id="add-player-ff">
-                            <i class="fas fa-plus"></i> Adicionar Reserva
-                        </button>
                     </div>
                     
-                    <div id="jogadores-container">
-                        <!-- Jogadores serão gerados via JavaScript -->
+                    <!-- Jogadores do Free Fire -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-user-friends"></i> Jogadores do Time</h2>
+                        <div class="player-controls">
+                            <div class="player-count">
+                                <i class="fas fa-users"></i> Jogadores: <span id="player-count">4</span>/6 
+                                <small>(4 titulares obrigatórios, 2 reservas opcionais)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="add-player-ff">
+                                <i class="fas fa-plus"></i> Adicionar Reserva
+                            </button>
+                        </div>
+                        
+                        <div id="jogadores-container">
+                            <!-- Jogadores Titulares (4 obrigatórios) -->
+                            <!-- Estrutura será gerada via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FIFA -->
+                <div class="modalidade-content" id="fifa-content">
+                    <div class="form-section">
+                        <h2><i class="fas fa-user"></i> Informações do Jogador - FIFA</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nome-fifa" class="required">Nome Completo</label>
+                                <input type="text" id="nome-fifa" name="Nome Completo" required placeholder="Seu nome completo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apelido-fifa">Apelido (se houver)</label>
+                                <input type="text" id="apelido-fifa" name="Apelido" placeholder="Seu apelido">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone-fifa" class="required">Telefone</label>
+                                <input type="tel" id="telefone-fifa" name="Telefone" required placeholder="(00) 00000-0000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="instagram-fifa">Instagram</label>
+                                <input type="text" id="instagram-fifa" name="Instagram" placeholder="@seuinstagram">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nascimento-fifa" class="required">Data de Nascimento</label>
+                                <input type="date" id="nascimento-fifa" name="Data de Nascimento" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Batalhas de Rap -->
+                <div class="modalidade-content" id="rap-content">
+                    <div class="form-section">
+                        <h2><i class="fas fa-microphone-alt"></i> Informações do Participante - Batalhas de Rap</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nome-rap" class="required">Nome Completo</label>
+                                <input type="text" id="nome-rap" name="Nome Completo" required placeholder="Seu nome completo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apelido-rap">Apelido Artístico</label>
+                                <input type="text" id="apelido-rap" name="Apelido Artístico" placeholder="Seu nome artístico">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone-rap" class="required">Telefone</label>
+                                <input type="tel" id="telefone-rap" name="Telefone" required placeholder="(00) 00000-0000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="instagram-rap">Instagram</label>
+                                <input type="text" id="instagram-rap" name="Instagram" placeholder="@seuinstagram">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nascimento-rap" class="required">Data de Nascimento</label>
+                                <input type="date" id="nascimento-rap" name="Data de Nascimento" required>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="submit-container">
                     <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO FREE FIRE
-                    </button>
-                </div>
-            </form>
-            
-            <!-- FIFA -->
-            <form id="fifa-form" class="modalidade-content" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
-                <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
-                <input type="hidden" name="Modalidade" value="FIFA" />
-                
-                <div class="form-section">
-                    <h2><i class="fas fa-user"></i> Informações do Jogador - FIFA</h2>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="nome-fifa" class="required">Nome Completo</label>
-                            <input type="text" id="nome-fifa" name="Nome Completo" required placeholder="Seu nome completo">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="apelido-fifa">Apelido (se houver)</label>
-                            <input type="text" id="apelido-fifa" name="Apelido" placeholder="Seu apelido">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefone-fifa" class="required">Telefone</label>
-                            <input type="tel" id="telefone-fifa" name="Telefone" required placeholder="(00) 00000-0000">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="instagram-fifa">Instagram</label>
-                            <input type="text" id="instagram-fifa" name="Instagram" placeholder="@seuinstagram">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nascimento-fifa" class="required">Data de Nascimento</label>
-                            <input type="date" id="nascimento-fifa" name="Data de Nascimento" required>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="submit-container">
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO FIFA
-                    </button>
-                </div>
-            </form>
-            
-            <!-- Batalhas de Rap -->
-            <form id="rap-form" class="modalidade-content" action="https://api.sheetmonkey.io/form/qwyJzaM1KcfP5ooao1auzv" method="post">
-                <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
-                <input type="hidden" name="Modalidade" value="Batalha da SIX" />
-                
-                <div class="form-section">
-                    <h2><i class="fas fa-microphone-alt"></i> Informações do Participante - Batalhas de Rap</h2>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="nome-rap" class="required">Nome Completo</label>
-                            <input type="text" id="nome-rap" name="Nome Completo" required placeholder="Seu nome completo">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="apelido-rap">Apelido Artístico</label>
-                            <input type="text" id="apelido-rap" name="Apelido Artístico" placeholder="Seu nome artístico">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefone-rap" class="required">Telefone</label>
-                            <input type="tel" id="telefone-rap" name="Telefone" required placeholder="(00) 00000-0000">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="instagram-rap">Instagram</label>
-                            <input type="text" id="instagram-rap" name="Instagram" placeholder="@seuinstagram">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nascimento-rap" class="required">Data de Nascimento</label>
-                            <input type="date" id="nascimento-rap" name="Data de Nascimento" required>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="submit-container">
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO BATALHA DA SIX
+                        <i class="fas fa-paper-plane"></i> ENVIAR INSCRIÇÃO
                     </button>
                 </div>
             </form>
@@ -192,22 +216,27 @@
                     // Adicionar classe ativa à aba clicada
                     tab.classList.add('active');
                     
-                    // Esconder todos os formulários
-                    document.querySelectorAll('form.modalidade-content').forEach(form => {
-                        form.classList.remove('active');
+                    // Esconder todos os conteúdos
+                    document.querySelectorAll('.modalidade-content').forEach(content => {
+                        content.classList.remove('active');
                     });
                     
-                    // Mostrar o formulário correspondente
+                    // Mostrar o conteúdo correspondente
                     const modalidade = tab.getAttribute('data-modalidade');
-                    document.getElementById(`${modalidade}-form`).classList.add('active');
+                    document.getElementById(`${modalidade}-content`).classList.add('active');
+                    
+                    // Atualizar campo hidden para Sheet Monkey
+                    document.getElementById('modalidade-hidden').value = 
+                        modalidade === 'freefire' ? 'Free Fire' : 
+                        modalidade === 'fifa' ? 'FIFA' : 'Batalha da SIX';
                 });
             });
             
             // Inicializar jogadores do Free Fire
             initFreeFirePlayers();
             
-            // Configurar máscara de telefone
-            setupPhoneMask();
+            // Configurar validação do formulário
+            setupFormValidation();
         });
         
         // Sistema de jogadores para Free Fire
@@ -216,11 +245,10 @@
         
         function initFreeFirePlayers() {
             const jogadoresContainer = document.getElementById('jogadores-container');
-            jogadoresContainer.innerHTML = '';
             
             // Criar 4 jogadores titulares (obrigatórios)
             for (let i = 1; i <= 4; i++) {
-                const playerSection = createPlayerSection(i, 'titular', true);
+                const playerSection = createPlayerSection(i, 'titular', i <= 4);
                 jogadoresContainer.appendChild(playerSection);
             }
             
@@ -265,7 +293,7 @@
                     <div class="form-group">
                         <label for="telefone-jogador-${number}" class="${requiredClass}">Telefone do Jogador</label>
                         <input type="tel" id="telefone-jogador-${number}" name="Telefone Jogador ${number}" ${requiredAttr} 
-                               placeholder="(00) 00000-0000" class="phone-input">
+                               placeholder="(00) 00000-0000">
                     </div>
                     
                     <div class="form-group">
@@ -280,14 +308,6 @@
                     </div>
                 </div>
             `;
-            
-            // Aplicar máscara de telefone
-            const phoneInput = section.querySelector('.phone-input');
-            if (phoneInput) {
-                phoneInput.addEventListener('input', function(e) {
-                    applyPhoneMask(e.target);
-                });
-            }
             
             // Adicionar evento de remoção para jogadores reserva
             if (type === 'reserva') {
@@ -355,44 +375,26 @@
             }
         });
         
-        // Máscara de telefone
-        function setupPhoneMask() {
-            const phoneInputs = document.querySelectorAll('input[type="tel"]');
-            phoneInputs.forEach(input => {
-                input.addEventListener('input', function(e) {
-                    applyPhoneMask(e.target);
-                });
-            });
-        }
-        
-        function applyPhoneMask(input) {
-            let value = input.value.replace(/\D/g, '');
+        // Configurar validação do formulário - CORREÇÃO PRINCIPAL
+        function setupFormValidation() {
+            const form = document.getElementById('inscricaoForm');
             
-            if (value.length > 11) {
-                value = value.substring(0, 11);
-            }
-            
-            if (value.length > 6) {
-                value = value.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-            } else if (value.length > 2) {
-                value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
-            } else if (value.length > 0) {
-                value = value.replace(/^(\d{0,2})/, '($1');
-            }
-            
-            input.value = value;
-        }
-        
-        // Validação antes do envio (opcional, para melhor UX)
-        document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
-                const requiredFields = form.querySelectorAll('[required]');
                 let isValid = true;
+                const activeModalidade = document.querySelector('.modalidade-content.active').id;
+                
+                // Validar campos obrigatórios da modalidade ativa
+                const requiredFields = document.querySelectorAll(`#${activeModalidade} [required]`);
                 
                 requiredFields.forEach(field => {
                     if (!field.value.trim()) {
                         isValid = false;
                         field.style.borderColor = 'var(--error)';
+                        
+                        // Scroll para o primeiro campo com erro
+                        if (isValid) {
+                            field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
                     } else {
                         field.style.borderColor = '';
                     }
@@ -402,8 +404,10 @@
                     e.preventDefault();
                     alert('Por favor, preencha todos os campos obrigatórios marcados com *.');
                 }
+                // REMOVIDO: else { ... } -a Deixe o formulário ser enviado normalmente quando válido
+                // O formulário será enviado para o Sheet Monkey automaticamente
             });
-        });
+        }
     </script>
 </body>
 </html>
